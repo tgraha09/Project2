@@ -1,0 +1,54 @@
+{
+  "name": "project2",
+  "version": "0.0.0",
+  "main": "./server/index.js",
+  "engines": {
+    "node": "^12.22.0",
+    "npm": "6.13.7"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite dev cross-env DEBUG=vite:* vite",
+    "vite": "vite",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --outDir dist/server --ssr ./src/entry-server.jsx",
+    "serve": "node server",
+    "exe": "build:server",
+    "nodemon": "nodemon --watch /server",
+    "pretest": "eslint ./src --fix",
+    "test": "echo \"Tests complete\"",
+    "start": "node ./server/index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "connect-redis": "^6.0.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "helmet": "^4.6.0",
+    "jquery": "^3.6.0",
+    "mongoose": "^6.0.12",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-helmet-async": "^1.1.2",
+    "react-router": "^6.0.2",
+    "react-router-dom": "^5.3.0",
+    "redis": "^3.1.2",
+    "serve-favicon": "^2.5.0",
+    "underscore": "^1.13.1",
+    "vite-plugin-handlebars": "^1.6.0",
+    "vite-ssr": "^0.14.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.0.0",
+    "nodemon": "^2.0.14",
+    "vite": "^2.6.4"
+  }
+}
