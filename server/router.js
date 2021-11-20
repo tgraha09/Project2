@@ -8,9 +8,9 @@ const router = (app) => {
  // app.get('/getToken', controllers.Account.getToken);
   app.get('/recipes-json', controllers.recipes.GETSearchedRecipes); // mid.requiresSecure, mid.requiresLogout,
   app.get('/', mid.requiresSecure, mid.requiresLogout,(req, res)=>{
+    res.status(200).set({ 'Content-Type-Options': 'nosniff' }).render('app')
+    //res.render('app')
     
-    res.render('app');
-    //res.status(200).set({ 'Content-Type': 'text/html' }).end(template)
   });
   app.get('/login', mid.requiresSecure, mid.requiresLogout, (req, res)=>{
     //console.log(req);

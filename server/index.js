@@ -35,8 +35,8 @@ mongoose.connect(dbURL, (err) => {
 });
 const app = express()
 
-app.use('/assets', express.static(path.resolve(`${__dirname}/../dist/assets`)));
-app.use('/src', express.static(path.resolve(`${__dirname}/../src/`)));
+app.use('/assets', express.static(path.join(__dirname, "/../dist/assets"))); //path.resolve(`${__dirname}/../dist/assets`)
+//app.use('public', express.static(path.join(__dirname, "/../dist/")));
 app.use(cookieParser());
 /*const corsOptions ={
   origin:'http://localhost:3000', 
