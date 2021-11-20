@@ -10,7 +10,7 @@ const router = (app) => {
   app.get('/', mid.requiresSecure, mid.requiresLogout,(req, res)=>{
     res.status(200).set({ 'Content-Type-Options': 'nosniff' }).render('app')
     //res.render('app')
-    
+    //res.sendFile(path.join(__dirname + '/../dist/index.html'));
   });
   app.get('/login', mid.requiresSecure, mid.requiresLogout, (req, res)=>{
     //console.log(req);

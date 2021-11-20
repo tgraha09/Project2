@@ -1,0 +1,6 @@
+{
+    "root":{
+        "./dist":"./dist",
+        "/assets/*": "./dist/assets/"
+    }
+}
