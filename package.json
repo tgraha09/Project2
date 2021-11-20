@@ -10,7 +10,6 @@
     "dev": "vite dev cross-env DEBUG=vite:* vite",
     "buildBundle": "babel ./dist/assets --presets @babel/preset-env --out-file ./hosted/bundle.js",
     "buildClientBundle": "babel ./src/components --presets @babel/preset-react --out-file ./hosted/clientbundle.js",
-    "build": " npm run buildBundle",
     "vite": "vite",
     "pile": "vite build",
     "serve": "node server",
