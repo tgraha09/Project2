@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import RecipeFinder, { App } from './App'
 
 import { LoadClients } from './components/client'
-import './index.css'
+
 import { sendAjax } from './utilities'
 
 /*sendAjax('GET', '/getToken', null, (result)=>{
@@ -24,10 +24,5 @@ import { sendAjax } from './utilities'
   )
 })*/
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+App()
 //LoadClients()

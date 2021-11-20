@@ -36,7 +36,8 @@ mongoose.connect(dbURL, (err) => {
 const app = express()
 
 app.use('/assets', express.static(path.join(__dirname, "/../dist/assets"))); //path.resolve(`${__dirname}/../dist/assets`)
-
+app.use('/hosted', express.static(path.join(__dirname, "/../hosted")));
+app.use('/src', express.static(path.join(__dirname, "/../src")));
 //app.use('public', express.static(path.join(__dirname, "/../dist/")));
 //app.use(cookieParser());
 /*const corsOptions ={

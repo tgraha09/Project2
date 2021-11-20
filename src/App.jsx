@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import ReactDOM from 'react-dom'
-import logo from './logo.svg'
+import { renderToNodeStream, renderToString } from 'react-dom/server'
 import { Display } from './components/display'
 import { LoginWindow, SignupWindow, LoadClients } from './components/client'
 import { Finder } from './components/finder'
@@ -28,7 +28,7 @@ class RecipeFinder extends React.Component {
   
   render(){
     
-    return <Display>
+    /*return <Display>
       
       <BrowserRouter>
       
@@ -49,39 +49,44 @@ class RecipeFinder extends React.Component {
         </Switch>
       </BrowserRouter>
       
-    </Display>
+    </Display>*/
   }
 
   
 }
 
 export const App = (props)=>{
+  //const App = this.render
+  ReactDOM.render(
+    <React.StrictMode>
+    <Display>
     
-  return (<Display>
-      
     <BrowserRouter>
     
       <Switch>
-      <Route exact path={`/`}> 
+      <Route exact path={'/'}> 
           <LoginWindow ></LoginWindow>
         </Route>
-        <Route exact path={`/login`}  > 
+        <Route exact path={'/login'}  > 
           <LoginWindow ></LoginWindow>
         </Route>
-        <Route exact path={`/signup`}  > 
+        <Route exact path={'/signup'}  > 
           <SignupWindow ></SignupWindow>
         </Route>
-        <Route exact path={`/finder`}  > 
+        <Route exact path={'/finder'}  > 
         <Finder ></Finder>
         </Route> 
-        <Route exact path={`/recipes`}  > 
+        <Route exact path={'/recipes'}  > 
           <Search ></Search>
         </Route> 
       </Switch>
     </BrowserRouter> 
     
-  </Display>)
-  
+  </Display>
+  </React.StrictMode>,
+    document.getElementById('root')
+  )
+ 
 }
 
 
