@@ -38,7 +38,7 @@ const app = express()
 app.use('/assets', express.static(path.join(__dirname, "/../dist/assets"))); //path.resolve(`${__dirname}/../dist/assets`)
 
 //app.use('public', express.static(path.join(__dirname, "/../dist/")));
-app.use(cookieParser());
+//app.use(cookieParser());
 /*const corsOptions ={
   origin:'http://localhost:3000', 
   credentials:true,            //access-control-allow-credentials:true
@@ -70,7 +70,7 @@ app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/../views`);
 app.disable('x-powered-by');
-//app.use(cookieParser());
+app.use(cookieParser());
 //app.use(csrf());
 
 router(app);

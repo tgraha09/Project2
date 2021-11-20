@@ -7,6 +7,11 @@ const { createServer: createViteServer } = require('vite')
 const router = (app) => {
  // app.get('/getToken', controllers.Account.getToken);
   app.get('/recipes-json', controllers.recipes.GETSearchedRecipes); // mid.requiresSecure, mid.requiresLogout,
+  /*app.get('/assets/index.a5111596.js', mid.requiresSecure, mid.requiresLogout,(req, res)=>{
+    res.status(200).set({ 'Content-Type-Options': 'nosniff' }).render('app')
+    console.log("script");
+    res.sendFile(path.join(__dirname + '/../dist/assets/index.a5111596.js'));
+  });*/
   app.get('/', mid.requiresSecure, mid.requiresLogout,(req, res)=>{
     res.status(200).set({ 'Content-Type-Options': 'nosniff' }).render('app')
     //res.render('app')
