@@ -16,7 +16,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const router = require('./router.js');
 var cors = require('cors')
-
+//express.static.mime.define({'text/plain': ['md']});
 //const router = require('./src/router.js');
 //const render = require('react-dom').render
 const { createServer: createViteServer } = require('vite');
