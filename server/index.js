@@ -35,15 +35,15 @@ mongoose.connect(dbURL, (err) => {
 });
 const app = express()
 
-app.use('/assets', express.static(path.resolve(`${__dirname}/../dist/assets/`)));
+app.use('/assets', express.static(path.resolve(`${__dirname}/../dist/assets`)));
 //app.use('/src', express.static(path.resolve(`${__dirname}/../src/`)));
 app.use(cookieParser());
-const corsOptions ={
+/*const corsOptions ={
   origin:'http://localhost:3000', 
   credentials:true,            //access-control-allow-credentials:true
   optionSuccessStatus:200
 }
-app.use(cors(corsOptions));
+app.use(cors(corsOptions));*/
 app.use((err, req, res, next) => {
   if (err.code !== 'EBADCSRFTOKEN') {
     return next(err);
