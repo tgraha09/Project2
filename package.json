@@ -7,11 +7,9 @@
     "npm": "6.13.7"
   },
   "scripts": {
-    "build": "vite build",
     "dev": "vite dev cross-env DEBUG=vite:* vite",
     "vite": "vite",
-    "build:client": "vite build --outDir dist/client",
-    "build:server": "vite build --outDir dist/server --ssr ./src/entry-server.jsx",
+    "pile": "vite build",
     "serve": "node server",
     "exe": "build:server",
     "nodemon": "nodemon --watch /server",
