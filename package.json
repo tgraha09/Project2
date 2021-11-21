@@ -7,12 +7,12 @@
     "npm": "6.13.7"
   },
   "scripts": {
-    "dev": "vite dev cross-env DEBUG=vite:* vite",
+    "dev": "vite",
     "buildBundle": "babel ./dist/assets --presets @babel/preset-env --out-file ./hosted/bundle.js",
     "buildClientBundle": "babel ./src/components --presets @babel/preset-react --out-file ./hosted/clientbundle.js",
-    "vite": "vite",
+    "vite": "node server",
     "pile": "vite build",
-    "serve": "node server",
+    "serve": "node server", 
     "exe": "build:server",
     "nodemon": "nodemon --watch /server",
     "pretest": "eslint ./src --fix",

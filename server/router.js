@@ -12,39 +12,44 @@ const router = (app) => {
     console.log("script");
     res.sendFile(path.join(__dirname + '/../dist/assets/index.a5111596.js'));
   });*/
-  app.get('/css', (req, res)=>{
-    //console.log(__dirname);
+  /*app.get('/css', (req, res)=>{
+
     res.sendFile(__dirname+'/assets/index.8f77e6d6.css');
   });
   app.get('/vendor', (req, res)=>{
-    //console.log(__dirname);
+ 
     res.sendFile(__dirname+'/assets/vendor.57c8bb31.js');
   });
   app.get('/script', (req, res)=>{
-    //console.log(__dirname);
+
     res.sendFile(__dirname+'/assets/index.16524689.js');
-  });
+  });*/
   app.get('/', mid.requiresSecure, mid.requiresLogout,(req, res)=>{
-    res.status(200).set({ 'Content-Type-Options': 'nosniff' }).render('app')
+   // res.render('app')
     //res.render('app')
     //res.sendFile(path.join(__dirname + '/../dist/index.html'));
+    res.sendFile(path.join(__dirname + '/../dist/index.html'));
   });
   app.get('/login', mid.requiresSecure, mid.requiresLogout, (req, res)=>{
     //console.log(req);
-    res.render('app');
+    //res.render('app');
+    res.sendFile(path.join(__dirname + '/../dist/index.html'));
   });
   app.get('/logout', mid.requiresLogin, controllers.Account.logout);
   app.get('/signup', mid.requiresSecure, mid.requiresLogout, (req, res)=>{
     //console.log(req);
-    res.render('app');
+    //res.render('app');
+    res.sendFile(path.join(__dirname + '/../dist/index.html'));
   });
   app.get('/finder', mid.requiresLogin, (req, res)=>{
     //console.log(req);
-    res.render('app');
+    //res.render('app');
+    res.sendFile(path.join(__dirname + '/../dist/index.html'));
   }) // mid.requiresLogin,
   app.get('/recipes', mid.requiresLogin, (req, res)=>{
-    console.log('/recipes');
-    res.render('app');
+    //console.log('/recipes');
+    //res.render('app');
+    res.sendFile(path.join(__dirname + '/../dist/index.html'));
   })
   
   app.post('/login', mid.requiresSecure, mid.requiresLogout,controllers.Account.login); //mid.requiresSecure, mid.requiresLogout,
